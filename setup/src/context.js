@@ -9,6 +9,7 @@ import {
 } from './actions'
 import reducer from './reducer'
 
+// using algolia API for Hacker News
 const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?'
 
 const initialState = {}

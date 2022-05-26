@@ -9,7 +9,7 @@ import {
 const reducer = (state, action) => {
   // using switch instead of if statements
   switch (action.type) {
-    case 'SET_LOADING':
+    case SET_LOADING:
       return { ...state, isLoading: true }
       // if none of the actions passed match
     default:

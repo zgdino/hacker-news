@@ -12,6 +12,7 @@ import reducer from './reducer'
 // using algolia API for Hacker News
 const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?'
 
+// setting up what the initial state is looking like
 const initialState = {
   isLoading: true,
 }
@@ -22,7 +23,7 @@ const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   const fetchStories = async (url) => {
-    dispatch({ type: 'SET_LOADING' })
+    dispatch({ type: SET_LOADING })
   }
 
   useEffect(() => {

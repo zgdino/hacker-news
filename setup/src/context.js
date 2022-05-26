@@ -12,7 +12,9 @@ import reducer from './reducer'
 // using algolia API for Hacker News
 const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?'
 
-const initialState = {}
+const initialState = {
+  isLoading: true,
+}
 
 const AppContext = React.createContext()
 
@@ -27,7 +29,9 @@ const AppProvider = ({ children }) => {
     fetchStories()
   }, [])
 
-  return <AppContext.Provider value='hello'>{children}</AppContext.Provider>
+  return (
+    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+  )
 }
 // make sure use
 export const useGlobalContext = () => {

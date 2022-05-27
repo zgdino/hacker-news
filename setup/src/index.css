@@ -243,7 +243,7 @@ Story
   }
 }
 .story {
-  background: var(--clr-white);
+  background: var(--clr-grey-5);
   border-radius: var(--radius);
   padding: 1rem 2rem;
 }

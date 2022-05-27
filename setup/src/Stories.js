@@ -8,15 +8,15 @@ const Stories = () => {
   if (isLoading) {
     return <div className='loading'></div>
   }
-
-  return <section className="stories">
-    {hits.map((story) => {
-      console.log(story);
-      <article className="story">
-        single story
-      </article>
-    })}
-  </section>
+  console.log(hits);
+  return (
+    <section className='stories'>
+      {hits.map((story) => {
+        console.log(story)
+        return <article className='story'>single story</article>
+      })}
+    </section>
+  )
 }
 
 export default Stories

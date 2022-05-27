@@ -30,7 +30,7 @@ const AppProvider = ({ children }) => {
     dispatch({ type: SET_LOADING })
     try {
       const response = await fetch(url)
-      const data = response.json()
+      const data = await response.json()
       dispatch({
         type: SET_STORIES,
         payload: { hits: data.hits, nbPages: data.nbPages },
@@ -41,7 +41,7 @@ const AppProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    fetchStories(`${API_ENDPOINT}query=${state.query}&page={state.page}`)
+    fetchStories(`${API_ENDPOINT}query=${state.query}&page=${state.page}`)
   }, [])
 
   return (

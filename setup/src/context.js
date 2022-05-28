@@ -40,12 +40,16 @@ const AppProvider = ({ children }) => {
     }
   }
 
+  const removeStory = (id) => {
+    console.log(id);
+  }
+
   useEffect(() => {
     fetchStories(`${API_ENDPOINT}query=${state.query}&page=${state.page}`)
   }, [])
 
   return (
-    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, removeStory }}>{children}</AppContext.Provider>
   )
 }
 // make sure use

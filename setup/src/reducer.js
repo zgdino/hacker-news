@@ -24,6 +24,11 @@ const reducer = (state, action) => {
         // return all the stories that are not matching removed story
         hits: state.hits.filter((story) => story.objectID !== action.payload), 
       }
+    case HANDLE_SEARCH:
+      return {
+        ...state,
+        
+      }
     // if none of the actions passed match
     default:
       throw new Error(`no matching "${action.type}" action type`)

@@ -11,6 +11,7 @@ const SearchForm = () => {
         type='text'
         className='form-input'
         value={query}
+        // passing the search term as a value for handle search functionality
         onChange={(e) => handleSearch(e.target.value)}
       />
     </form>

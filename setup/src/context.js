@@ -39,7 +39,7 @@ const AppProvider = ({ children }) => {
       console.log(error)
     }
   }
-
+  // remove story functionality that will get handled in reducer
   const removeStory = (id) => {
     dispatch({ type: REMOVE_STORY, payload: id })
   }

@@ -21,6 +21,7 @@ const reducer = (state, action) => {
     case REMOVE_STORY:
       return {
         ...state,
+        // return all the stories that are not matching removed story
         hits: state.hits.filter((story) => story.objectID !== action.payload), 
       }
     // if none of the actions passed match

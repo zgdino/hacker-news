@@ -29,6 +29,7 @@ const Stories = () => {
               </a>
               <button
                 className='remove-btn'
+                // when remove button clicked it will trigger remove story functionality set up in context.js
                 onClick={() => removeStory(objectID)}
               >
                 remove

@@ -41,7 +41,7 @@ const AppProvider = ({ children }) => {
   }
 
   const removeStory = (id) => {
-    console.log(id);
+    dispatch({ type: REMOVE_STORY, payload: id })
   }
 
   useEffect(() => {
@@ -49,7 +49,9 @@ const AppProvider = ({ children }) => {
   }, [])
 
   return (
-    <AppContext.Provider value={{ ...state, removeStory }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, removeStory }}>
+      {children}
+    </AppContext.Provider>
   )
 }
 // make sure use

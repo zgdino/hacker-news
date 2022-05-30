@@ -40,6 +40,14 @@ const reducer = (state, action) => {
         }
         return { ...state, page: nextPage }
       }
+      if (action.payload === 'dec') {
+        let prevPage = state.page - 1
+        // even though there are 50 pages, first page starts at 0 and the lat is at 49 and for that reason - 1
+        if (prevPage < 1) {
+          prevPage = state.nbPages - 1
+        }
+        return { ...state, page: prevPage }
+      }
     // if none of the actions passed match
     default:
       throw new Error(`no matching "${action.type}" action type`)

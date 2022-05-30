@@ -31,6 +31,14 @@ const reducer = (state, action) => {
         // every time something is typed in a search bar change the page to 0, because if we are currently on page number 6 and start searching for a new term, we would like to start from page 0
         page: 0,
       }
+    case HANDLE_PAGE:
+      if (action.payload === 'inc') {
+        let nextPage = state.page + 1
+        // even though there are 50 pages, first page starts at 0 and the lat is at 49 and for that reason - 1
+        if (nextPage > state.nbPages - 1) {
+          nextPage = 0
+        }
+      }
     // if none of the actions passed match
     default:
       throw new Error(`no matching "${action.type}" action type`)

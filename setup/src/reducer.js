@@ -38,6 +38,7 @@ const reducer = (state, action) => {
         if (nextPage > state.nbPages - 1) {
           nextPage = 0
         }
+        return { ...state, page: nextPage }
       }
     // if none of the actions passed match
     default:

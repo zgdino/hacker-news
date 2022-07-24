@@ -13,3 +13,6 @@ HOW THIS THING WORKS:
 
 LONG STORY SHORT:
 component(e.g. searchForm.js) → context.js(its function triggers certain action to be dispatched) → reducer.js defines what that action does(switch/case)
+
+### Netlify deployment
+- make sure that path to public file is clear i.e. no setup file in between
